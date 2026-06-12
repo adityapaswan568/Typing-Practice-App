@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowType - Modern Typing Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <header class="header">
+                <h1 class="title">FlowType</h1>
+                <p class="subtitle">Elevate your typing speed and accuracy.</p>
+            </header>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value" id="timeDisplay">0</span>
+                    <span class="stat-label">Seconds</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="wpmDisplay">0</span>
+                    <span class="stat-label">WPM</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="accuracyDisplay">100</span>
+                    <span class="stat-label">% Accuracy</span>
+                </div>
+            </div>
+
+            <div class="typing-area" id="typingArea">
+                <div class="text-display" id="textDisplay"></div>
+                <!-- Hidden input to capture mobile keyboard as well -->
+                <input type="text" class="hidden-input" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-secondary" id="restartBtn">
+                    <i data-feather="refresh-cw"></i> Restart
+                </button>
+            </div>
+        </main>
+
+        <div class="results-modal" id="resultsModal">
+            <div class="results-content">
+                <h2 class="results-title">Test Complete!</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-value" id="finalWpm">0</div>
+                        <div class="result-label">WPM</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="finalAccuracy">100%</div>
+                        <div class="result-label">Accuracy</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="finalTime">0s</div>
+                        <div class="result-label">Time</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-value" id="finalChars">0/0</div>
+                        <div class="result-label">Correct / Total</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="playAgainBtn">
+                    <i data-feather="play"></i> Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
